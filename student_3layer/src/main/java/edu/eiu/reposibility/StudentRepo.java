@@ -73,8 +73,8 @@ public class StudentRepo {
 
     public static List<Student> findByName(String studentName) {
         EntityManager em = JpaUtil.getEntityManager();
-        var students = em.createQuery("SELECT Student FROM Student s WHERE s.name LIKE :name", Student.class)
-                .setParameter("name", "%" + studentName + "%")
+        var students = em.createQuery("SELECT Student FROM Student s WHERE s.fullName LIKE :fullName", Student.class)
+                .setParameter("fullName", "%" + studentName + "%")
                 .getResultList();
         em.close();
         return students;

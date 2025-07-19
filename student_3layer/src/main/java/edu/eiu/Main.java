@@ -2,7 +2,12 @@ package edu.eiu;//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 
 import edu.eiu.entity.Student;
+import edu.eiu.entity.Major;
+import edu.eiu.entity.School;
 import edu.eiu.service.StudentService;
+import edu.eiu.service.MajorService;
+import edu.eiu.service.SchoolService;
+import java.time.LocalDate;
 
 /**
  * Main's mission:
@@ -14,25 +19,38 @@ import edu.eiu.service.StudentService;
  */
 public class Main {
     public static void main(String[] args) {
-        var std1 = new Student("2025071401", "Nguyen Van A", 2005, 8.5);
-        var std2 = new Student("2025071402", "Nguyen Van B", 2005, 9.0);
-        var std3 = new Student("2025071403", "Nguyen Van C", 2005, 7.5);
-        //TIP Call service methods to save students
-        var studentService = new StudentService();
-        studentService.createStudent(std1);
-        studentService.createStudent(std2);
-        studentService.createStudent(std3);
+        SchoolService schoolService = new SchoolService();
+        MajorService majorService = new MajorService();
+        StudentService studentService = new StudentService();
 
-        //TIP Retrieve and display all students
-        System.out.println("List of students:");
-        studentService.getAllStudents().forEach(System.out::println);
+        // Create School
+        School school = new School("S01", "Engineering School", "Campus A");
+        schoolService.createSchool(school);
 
-        //TIP Edit a student
-        std1.setGpa(8.2);
-        studentService.updateStudent(std1);
-        System.out.println("After updating student 1: " + studentService.getStudentById(std1.getId()));
+        // Create Major
+        Major major = new Major("M01", "Computer Science", school);
+        majorService.createMajor(major);
 
-        var std4 = new Student("2025071404", "Nguyen Van D", 2005, 8.0);
-        studentService.updateStudent(std4);
+        // Create Student
+        Student student = new Student(1001, "Alice Smith", LocalDate.of(2002, 5, 15), 3.8, 2020, school, major);
+        studentService.createStudent(student);
+
+        // Update Student
+        student.setGpa(3.9);
+        studentService.updateStudent(student);
+
+        // Find Student by ID
+        Student foundStudent = studentService.getStudentById("1001");
+        System.out.println("Found Student: " + foundStudent);
+
+        // List all Students
+        System.out.println("All Students: " + studentService.getAllStudents());
+
+
+        // Delete Student
+//        studentService.deleteStudent(student);
+
+        // List all Students after deletion
+        System.out.println("All Students after deletion: " + studentService.getAllStudents());
     }
 }

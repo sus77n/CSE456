@@ -8,12 +8,13 @@
     <!-- Mỗi persistence-unit là một đơn vị khai báo để kết nối với một hệ quản trị csdl (MySQL, Oracle, SQL server,...), name phải khác nhau.   -->
 
 <!--    CẤU HÌNH KẾT NỐI DÀNH CHO MYSQL SERVER-->
-    <persistence-unit name="pu1-mysql-student_3layer" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="pu1-student-3layer" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 <!--        &lt;!&ndash; Khai báo các entity class để map xuống table, chỉ cần gõ tên class và chọn &ndash;&gt;-->
          <class>edu.eiu.entity.Student</class>
-<!--        <class>edu.eiu.Entity.Lecturer</class>-->
-<!--        <class>edu.eiu.Entity.Student</class>-->
+        <class>edu.eiu.entity.School</class>
+        <class>edu.eiu.entity.Major</class>
+
 
         <!-- Cấu hình kết nối CSDL -->
         <properties>

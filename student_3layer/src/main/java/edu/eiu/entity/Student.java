@@ -26,7 +26,14 @@ public class Student {
     @Column(name = "GPA")
     private double gpa;
 
-    @JoinColumn(name = "schoolId", referencedColumnName = "schoolId", nullable = false)
-    @Column(name = "schoolId", columnDefinition = "CHAR(3)", nullable = false)
-    private String schoolId;
+    @Column(name = "enrollmentYear", nullable = false)
+    private int enrollmentYear;
+
+    @ManyToOne
+    @JoinColumn(name = "schoolId", nullable = false)
+    private School school;
+
+    @ManyToOne
+    @JoinColumn(name = "majorId", nullable = false)
+    private Major major;
 }
