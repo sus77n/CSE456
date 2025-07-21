@@ -28,7 +28,8 @@ public class Main {
         schoolService.createSchool(school);
 
         // Create Major
-        Major major = new Major("M01", "Computer Science", school);
+        Major major = new Major("M01", "Computer Science");
+        major.setSchool(school); // Associate Major with School
         majorService.createMajor(major);
 
         // Create Student
@@ -48,7 +49,10 @@ public class Main {
 
 
         // Delete Student
-//        studentService.deleteStudent(student);
+        Student foundStudentToDelete = studentService.getStudentById("1001");
+        studentService.deleteStudent(foundStudentToDelete);
+
+
 
         // List all Students after deletion
         System.out.println("All Students after deletion: " + studentService.getAllStudents());

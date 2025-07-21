@@ -49,10 +49,27 @@ public class StudentRepo {
     public static void remove(Student student) {
         EntityManager em = JpaUtil.getEntityManager();
         em.getTransaction().begin();
+
         em.remove(student);
+
         em.getTransaction().commit();
         em.close();
     }
+
+    public static void removeById(int studentId) {
+        EntityManager em = JpaUtil.getEntityManager();
+        em.getTransaction().begin();
+
+        Student student = em.find(Student.class, studentId);
+        if (student != null) {
+            em.remove(student);
+        }
+
+        em.getTransaction().commit();
+        em.close();
+    }
+
+
 
     /**
      * <li>Find students by ID, by name, or retrieve all students.</li>

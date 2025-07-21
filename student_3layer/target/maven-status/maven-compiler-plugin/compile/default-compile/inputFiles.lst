@@ -1,2 +1,11 @@
+D:\EIU\Q4_24_25\CSE456\Lab\student_3layer\src\main\java\edu\eiu\entity\Major.java
+D:\EIU\Q4_24_25\CSE456\Lab\student_3layer\src\main\java\edu\eiu\entity\School.java
 D:\EIU\Q4_24_25\CSE456\Lab\student_3layer\src\main\java\edu\eiu\entity\Student.java
+D:\EIU\Q4_24_25\CSE456\Lab\student_3layer\src\main\java\edu\eiu\infra\JpaUtil.java
 D:\EIU\Q4_24_25\CSE456\Lab\student_3layer\src\main\java\edu\eiu\Main.java
+D:\EIU\Q4_24_25\CSE456\Lab\student_3layer\src\main\java\edu\eiu\reposibility\MajorRepo.java
+D:\EIU\Q4_24_25\CSE456\Lab\student_3layer\src\main\java\edu\eiu\reposibility\SchoolRepo.java
+D:\EIU\Q4_24_25\CSE456\Lab\student_3layer\src\main\java\edu\eiu\reposibility\StudentRepo.java
+D:\EIU\Q4_24_25\CSE456\Lab\student_3layer\src\main\java\edu\eiu\service\MajorService.java
+D:\EIU\Q4_24_25\CSE456\Lab\student_3layer\src\main\java\edu\eiu\service\SchoolService.java
+D:\EIU\Q4_24_25\CSE456\Lab\student_3layer\src\main\java\edu\eiu\service\StudentService.java

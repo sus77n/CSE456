@@ -42,7 +42,8 @@ public class StudentService {
      */
     public void deleteStudent(Student student) {
         //TIP Validate the student object before deleting
-        StudentRepo.remove(student);
+//        StudentRepo.remove(student);
+        StudentRepo.removeById(student.getStudentId());
     }
 
     /**

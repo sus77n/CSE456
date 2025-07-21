@@ -1,2 +1,11 @@
 edu\eiu\entity\Student.class
+edu\eiu\reposibility\StudentRepo.class
+edu\eiu\service\StudentService.class
+edu\eiu\entity\Major.class
+edu\eiu\reposibility\MajorRepo.class
+edu\eiu\service\SchoolService.class
+edu\eiu\infra\JpaUtil.class
+edu\eiu\entity\School.class
 edu\eiu\Main.class
+edu\eiu\reposibility\SchoolRepo.class
+edu\eiu\service\MajorService.class
