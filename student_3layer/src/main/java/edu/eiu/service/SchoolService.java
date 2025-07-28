@@ -1,7 +1,7 @@
 package edu.eiu.service;
 
 import edu.eiu.entity.School;
-import edu.eiu.reposibility.SchoolRepo;
+import edu.eiu.repository.SchoolRepo;
 import java.util.List;
 
 public class SchoolService {

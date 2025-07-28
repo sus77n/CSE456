@@ -1,7 +1,7 @@
 package edu.eiu.service;
 
 import edu.eiu.entity.Student;
-import edu.eiu.reposibility.StudentRepo;
+import edu.eiu.repository.StudentRepo;
 
 import java.util.List;
 
@@ -49,7 +49,7 @@ public class StudentService {
     /**
      * Get a student by ID.
      */
-    public Student getStudentById(String studentId) {
+    public Student getStudentById(int studentId) {
         //TIP Validate the studentId before fetching
         return StudentRepo.findById(studentId);
     }

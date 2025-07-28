@@ -29,8 +29,8 @@ public class JpaUtil {
      * To ensure the static block above is executed, all constructors must be disabled.
      * By default, if no constructor is declared, the class inherits the default no-argument constructor from Object.
      */
+    // Private constructor to prevent instantiation
     private JpaUtil() {
-        // Private constructor to prevent instantiation
     }
 
     public static EntityManager getEntityManager() {

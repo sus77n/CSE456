@@ -1,4 +1,4 @@
-package edu.eiu.reposibility;
+package edu.eiu.repository;
 
 import edu.eiu.entity.School;
 import edu.eiu.infra.JpaUtil;

@@ -26,10 +26,10 @@ public class School {
     @Column(name = "location")
     private String location;
 
-    @OneToMany(mappedBy = "school", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "school", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Student> students;
 
-    @OneToMany(mappedBy = "school", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "school", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Major> majors;
 
     public School(String schoolId, String schoolName, String location) {

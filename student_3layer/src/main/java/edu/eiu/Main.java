@@ -41,7 +41,7 @@ public class Main {
         studentService.updateStudent(student);
 
         // Find Student by ID
-        Student foundStudent = studentService.getStudentById("1001");
+        Student foundStudent = studentService.getStudentById(1001);
         System.out.println("Found Student: " + foundStudent);
 
         // List all Students
@@ -49,9 +49,8 @@ public class Main {
 
 
         // Delete Student
-        Student foundStudentToDelete = studentService.getStudentById("1001");
+        Student foundStudentToDelete = studentService.getStudentById(1001);
         studentService.deleteStudent(foundStudentToDelete);
-
 
 
         // List all Students after deletion

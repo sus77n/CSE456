@@ -1,4 +1,4 @@
-package edu.eiu.reposibility;
+package edu.eiu.repository;
 
 
 import edu.eiu.entity.Student;
@@ -61,6 +61,7 @@ public class StudentRepo {
         em.getTransaction().begin();
 
         Student student = em.find(Student.class, studentId);
+
         if (student != null) {
             em.remove(student);
         }
@@ -74,7 +75,7 @@ public class StudentRepo {
     /**
      * <li>Find students by ID, by name, or retrieve all students.</li>
      */
-    public static Student findById(String studentId) {
+    public static Student findById(int studentId) {
         EntityManager em = JpaUtil.getEntityManager();
         Student student = em.find(Student.class, studentId);
         em.close();

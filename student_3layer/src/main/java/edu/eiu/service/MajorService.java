@@ -1,7 +1,7 @@
 package edu.eiu.service;
 
 import edu.eiu.entity.Major;
-import edu.eiu.reposibility.MajorRepo;
+import edu.eiu.repository.MajorRepo;
 import java.util.List;
 
 public class MajorService {
