@@ -1,15 +1,15 @@
 package eiu.edu.service;
 
-import eiu.edu.entity.PaymentMethod;
+import eiu.edu.data.PaymentMethod;
 
 public class PaymentService {
-    private final PaymentMethod paymentMethod;
+    private PaymentMethod paymentMethod;
 
     public PaymentService(PaymentMethod paymentMethod) {
         this.paymentMethod = paymentMethod;
     }
 
-    public void process(double amount) {
+    public void processPayment(double amount) {
         paymentMethod.makePayment(amount);
     }
 }
