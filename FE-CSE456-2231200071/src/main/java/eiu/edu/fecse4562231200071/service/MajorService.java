@@ -5,6 +5,8 @@ import eiu.edu.fecse4562231200071.repo.MajorRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MajorService {
 
@@ -13,5 +15,9 @@ public class MajorService {
 
     public void save(Major major){
         majorRepo.save(major);
+    }
+
+    public List<Major> getAllMajors() {
+        return majorRepo.findAll();
     }
 }

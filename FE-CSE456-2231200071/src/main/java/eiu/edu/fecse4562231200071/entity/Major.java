@@ -2,17 +2,19 @@ package eiu.edu.fecse4562231200071.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "tbl_Major")
-@Data
-@AllArgsConstructor
+@Getter
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class Major {
 
     @Id
@@ -41,5 +43,14 @@ public class Major {
     public Major(String name, String description) {
         this.name = name;
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Major{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

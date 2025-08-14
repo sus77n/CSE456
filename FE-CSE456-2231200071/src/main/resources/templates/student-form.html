@@ -5,7 +5,38 @@
     <title>Student Form</title>
 </head>
 <body>
-
-
+    <h1 th:text="${student.studentId} == null ? 'Create Student' : 'Edit Student'"></h1>
+    <form th:action="@{/students/save}" th:object="${student}" method="post">
+        <div>
+            <label>Student ID:</label>
+            <input type="text" th:field="*{studentId}" th:readonly="${student.studentId != null}" />
+            <span th:if="${#fields.hasErrors('studentId')}" th:errors="*{studentId}"></span>
+        </div>
+        <div>
+            <label>Name:</label>
+            <input type="text" th:field="*{name}" />
+            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+        </div>
+        <div>
+            <label>Year of Birth:</label>
+            <input type="number" th:field="*{year_of_birth}" min="1900" max="2100" />
+            <span th:if="${#fields.hasErrors('year_of_birth')}" th:errors="*{year_of_birth}"></span>
+        </div>
+        <div>
+            <label>GPA:</label>
+            <input type="number" th:field="*{gpa}" min="0" max="100" step="0.01" />
+            <span th:if="${#fields.hasErrors('gpa')}" th:errors="*{gpa}"></span>
+        </div>
+        <div>
+            <label>Major:</label>
+            <select th:field="*{major}" required>
+                <option th:each="major : ${majors}" th:value="${major.id}" th:text="${major.name}"></option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Save</button>
+            <a href="/students">Cancel</a>
+        </div>
+    </form>
 </body>
 </html>

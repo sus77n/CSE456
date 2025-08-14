@@ -24,4 +24,12 @@ public class StudentService {
     public List<Student> getAllStudents(){
         return studentRepo.findAll();
     }
+
+    public Student getStudentById(String id) {
+        return studentRepo.findById(id).orElse(null);
+    }
+
+    public List<Student> searchByName(String name) {
+        return studentRepo.findByNameContainingIgnoreCase(name);
+    }
 }
