@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Students</title>
+</head>
+<body>
+<h1>Students</h1>
+<a th:href="@{/students/new}">Create New</a>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Year of Birth</th>
+        <th>GPA</th>
+        <th>Major</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="student : ${students}">
+        <td th:text="${student.studentId}"></td>
+        <td th:text="${student.name}"></td>
+        <td th:text="${student.yearOfBirth}"></td>
+        <td th:text="${student.gpa}"></td>
+        <td th:text="${student.major != null ? student.major.majorName : 'N/A'}"></td>
+        <td>
+            <a th:href="@{'/students/edit/' + ${student.studentId}}">Edit</a>
+            <a th:href="@{'/students/delete/' + ${student.studentId}}"
+               onclick="return confirm('Are you sure?')">Delete</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

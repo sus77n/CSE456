@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Majors</title>
+</head>
+<body>
+<h1>Majors</h1>
+<a th:href="@{/majors/new}">Create New</a>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Major Name</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="major : ${majors}">
+        <td th:text="${major.id}"></td>
+        <td th:text="${major.majorName}"></td>
+        <td>
+            <a th:href="@{'/majors/edit/' + ${major.id}}">Edit</a>
+            <a th:href="@{'/majors/delete/' + ${major.id}}"
+               onclick="return confirm('Are you sure?')">Delete</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
